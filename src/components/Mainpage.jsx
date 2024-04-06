@@ -4,10 +4,40 @@ const Mainpage = () => {
     // States 
   const [textValue, setTextValue] = useState('');
   const [barcodeArray, setBarcodeArray] = useState([]);
+  const [selectedValue, setSelectedValue] = useState('code128');
+  const [selectedbgColor, setSelectedbgColor] = useState('#ffff')
+  const [lineColor, setLineColor] = useState('#000');
+  const [width, setWidth] = useState(2);
+  const [height, setHeight] = useState(60);
+  const [fontsize, setFontsize] = useState(20);
   const filteredArr = barcodeArray.filter(item => item !== '');
   // Function Handlers
   const handleChange = (event)=> {
     setTextValue(event.target.value);
+  }
+
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
+  }
+
+  const handlebgColorchange = (event)=> {
+    setSelectedbgColor(event.target.value);
+  }
+
+  const handleLineColorChange = (event)=> {
+    setLineColor(event.target.value);
+  }
+
+  const handleWithChange = (event)=> {
+    setWidth(event.target.value)
+  }
+
+  const handleHeightChange = (event)=> {
+    setHeight(event.target.value)
+  }
+
+  const handleFontSizeChange = (event)=> {
+    setFontsize(event.target.value);
   }
 
   const handleClick =()=> {
@@ -15,19 +45,58 @@ const Mainpage = () => {
     setBarcodeArray(arrayofBarcode);
   }
 
+  const handlePressEnter = (event)=> {
+    if(event.key === 'Enter') {
+      handleClick();
+    }
+  }
+
+
   return (
     <div className="w-full min-h-screen">
-      <section className="flex items-center justify-center mt-5">
+      <section className="flex items-center justify-around mt-5">
         <textarea 
           className="flex rounded-md p-2 border-red-200 outline-none" 
           value={textValue} 
           onChange={handleChange} 
+          onKeyDown={handlePressEnter}
           cols="80" rows="8" placeholder="Type something..."></textarea>
+        <div className="settings">
+          <div className="formate">
+            <h4>Select Format</h4>
+            <select value={selectedValue} onChange={handleSelectChange} >
+              <option value="code128">code128</option>
+              <option value="code39">code39</option>
+            </select>
+          </div>
+          <div className="bgColor" >
+            <h4>Select Background Color</h4>
+            <input type="color" value={selectedbgColor} onChange={handlebgColorchange} />
+          </div>
+          <div className="lineColor">
+            <h4>Select Line Color</h4>
+            <input type="color" value={lineColor} onChange={handleLineColorChange} />
+          </div>
+          <div className="widthHeight">
+            <div className="with">
+              <h4>Set With</h4>
+              <input type="number" value={width} onChange={handleWithChange} />
+            </div>
+            <div className="height">
+              <h4>Set Height</h4>
+              <input type="number" value={height} onChange={handleHeightChange} />
+            </div>
+            <div className="fontSize">
+              <h4>Set FontSize</h4>
+              <input type="number" value={fontsize} onChange={handleFontSizeChange} />
+            </div>
+          </div>
+        </div>
       </section>
       <section className="flex justify-center">
         <button 
           className="px-10 py-3 rounded-md bg-amber-300 mt-4" 
-          onClick={handleClick}>
+          onClick={handleClick} >
             Generate
         </button>
       </section>
@@ -38,11 +107,12 @@ const Mainpage = () => {
               <Barcode
                 value={value}
                 options={{
-                  format: "code128",
-                  lineColor: "#000",
-                  width: "6px",
-                  height: "250px",
-                  fontSize: '30',
+                  format: `${selectedValue}`,
+                  lineColor: `${lineColor}`,
+                  width: `${width}px`,
+                  height: `${height}px`,
+                  fontSize: `${fontsize}`,
+                  background: `${selectedbgColor}`
                 }}
                 renderer="svg"
               />
@@ -55,3 +125,5 @@ const Mainpage = () => {
 };
 
 export default Mainpage;
+
+// code128 code39 
