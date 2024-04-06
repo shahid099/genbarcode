@@ -27,6 +27,7 @@ import Barcode from "react-jsbarcode";
             </div>
           ))}
 ```
+# Some Paramerers
 ```
 {
   width: 2,
