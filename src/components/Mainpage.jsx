@@ -64,46 +64,46 @@ const Mainpage = () => {
         <div className="settings">
           <div className="formate">
             <h4>Select Format</h4>
-            <select value={selectedValue} onChange={handleSelectChange} >
+            <select className="p-[2px] rounded-md" value={selectedValue} onChange={handleSelectChange} >
               <option value="code128">code128</option>
               <option value="code39">code39</option>
             </select>
           </div>
           <div className="bgColor" >
             <h4>Select Background Color</h4>
-            <input type="color" value={selectedbgColor} onChange={handlebgColorchange} />
+            <input className="rounded-lg" type="color" value={selectedbgColor} onChange={handlebgColorchange} />
           </div>
           <div className="lineColor">
             <h4>Select Line Color</h4>
-            <input type="color" value={lineColor} onChange={handleLineColorChange} />
+            <input className="rounded-lg" type="color" value={lineColor} onChange={handleLineColorChange} />
           </div>
           <div className="widthHeight">
             <div className="with">
               <h4>Set With</h4>
-              <input type="number" value={width} onChange={handleWithChange} />
+              <input className="p-1 rounded-md w-20 text-center" type="number" value={width} onChange={handleWithChange} />
             </div>
             <div className="height">
               <h4>Set Height</h4>
-              <input type="number" value={height} onChange={handleHeightChange} />
+              <input className="p-1 rounded-md w-20 text-center" type="number" value={height} onChange={handleHeightChange} />
             </div>
             <div className="fontSize">
               <h4>Set FontSize</h4>
-              <input type="number" value={fontsize} onChange={handleFontSizeChange} />
+              <input className="p-1 rounded-md w-20 text-center" type="number" value={fontsize} onChange={handleFontSizeChange} />
             </div>
           </div>
         </div>
       </section>
       <section className="flex justify-center">
         <button 
-          className="px-10 py-3 rounded-md bg-amber-300 mt-4" 
+          className="px-10 py-3 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 mt-4 text-teal-950" 
           onClick={handleClick} >
             Generate
         </button>
       </section>
       <section>
-          <div className="w-full px-10 flex justify-center items-center mt-10 flex-col gap-1">
+          <div className="w-full px-10 flex justify-center items-center mt-10 flex-col gap-2">
            {filteredArr.map((value, index) => (
-            <div className="flex" key={index}>
+            <div key={index}>
               <Barcode
                 value={value}
                 options={{
