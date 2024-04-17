@@ -48,9 +48,8 @@ const Mainpage = () => {
   const handlePressEnter = (event)=> {
     if(event.key === 'Enter') {
       handleClick();
-    }
   }
-
+}
 
   return (
     <div className="w-full min-h-screen">
@@ -95,7 +94,7 @@ const Mainpage = () => {
       </section>
       <section className="flex justify-center">
         <button 
-          className="px-10 py-3 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 mt-4 text-teal-950" 
+          className="px-10 py-3 rounded-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-[white] text-xl" 
           onClick={handleClick} >
             Generate
         </button>
