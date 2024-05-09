@@ -52,7 +52,7 @@ const Mainpage = () => {
 }
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full min-h-screen relative">
       <section className="flex items-center justify-around mt-5">
         <textarea 
           className="flex rounded-md p-2 border-red-200 outline-none" 
@@ -94,7 +94,7 @@ const Mainpage = () => {
       </section>
       <section className="flex justify-center">
         <button 
-          className="px-10 py-3 rounded-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-[white] text-xl" 
+          className="button px-10 py-3 rounded-md text-[white] text-xl" 
           onClick={handleClick} >
             Generate
         </button>
