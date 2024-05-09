@@ -7,8 +7,10 @@ const Navbar = () => {
   if(!localStorage.getItem("userName")) {
     const name = window.onload = prompt("Enter Your Name Please: ");
     localStorage.setItem('userName', name);
+  } else if(localStorage.getItem("userName") === 'null' ) {
+    const name = window.onload = prompt("Enter Your Name Please: ");
+    localStorage.setItem("userName", name);
   }
-
 
   return (
     <>
@@ -24,8 +26,10 @@ const Navbar = () => {
               delaySpeed={1500}
             />
         </h1>
-        <h1 className='flex text-xl'><span className='flex text-[#ffffff]'>Welcome:</span> "{localStorage.getItem("userName")}"</h1>
-        <h2 className='p-2'>Login</h2>
+        <h1 className='flex text-2xl'><span className='flex text-[#ffffff] px-2'>Welcome</span> {localStorage.getItem("userName")}</h1>
+        <a href='#'>
+          <h2 className='p-2 text-2xl'>Login</h2>
+        </a>
       </div>
     </>
   )

@@ -1,59 +1,48 @@
 .button {
     background: linear-gradient(36deg, green, blue);
-    transition: all 0.6s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 .button:hover {
-    transform: translateY(-5px);
-    animation: hoverBtn 8s 0.3s linear infinite;
+    background: linear-gradient(36deg, blue, green);
+    /* animation: hoverBtn 18s 0.3s linear infinite; */
 }
 
-@keyframes hoverBtn {
+/* @keyframes hoverBtn {
     0% {
         background: linear-gradient(36deg, rgb(17, 227, 182), rgb(72, 122, 248));
-        transform: rotate(1deg);
     }
     10% {
         background: linear-gradient(72deg, rgb(154, 238, 154), rgb(57, 57, 103));
-        transform: rotate(-1deg);
     }
     20% {
         background: linear-gradient(108deg, rgb(52, 60, 165), rgb(128, 128, 187));
-        transform: rotate(1deg);
     }
     30% {
         background: linear-gradient(144deg, rgb(237, 168, 108), rgb(254, 40, 222));
-        transform: rotate(-1deg);
     }
     40% {
         background: linear-gradient(180deg, rgb(198, 237, 38), rgb(222, 31, 240));
-        transform: rotate(1deg);
     }
     50% {
         background: linear-gradient(216deg, rgb(230, 45, 45), rgb(195, 41, 238));
-        transform: rotate(-1deg);
     }
     60% {
         background: linear-gradient(252deg, rgb(142, 79, 34), rgb(145, 53, 226));
-        transform: rotate(1deg);
     }
     70% {
         background: linear-gradient(288deg, rgb(152, 219, 16), rgb(40, 191, 141));
-        transform: rotate(-1deg);
     }
     80% {
         background: linear-gradient(324deg, rgb(47, 43, 79), rgb(106, 39, 165));
-        transform: rotate(1deg);
     }
     90% {
         background: linear-gradient(360deg, rgb(233, 28, 28), rgb(211, 34, 170));
-        transform: rotate(-1deg);
     }
     100% {
         background: linear-gradient(0deg, rgb(25, 107, 67), rgb(73, 11, 58));
-        transform: rotate(1deg);
     }
-}
+} */
 
 
 /* bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 */
