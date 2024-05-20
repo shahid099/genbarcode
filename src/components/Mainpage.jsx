@@ -92,7 +92,7 @@ const Mainpage = () => {
           </div>
         </div>
       </section>
-      <section className="flex justify-center">
+      <section className="sectionButton flex justify-center">
         <button 
           className="button px-10 py-3 rounded-md text-[white] text-xl" 
           onClick={handleClick} >

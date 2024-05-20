@@ -1,10 +1,12 @@
 .button {
     background: linear-gradient(36deg, green, blue);
-    transition: all 0.4s ease-in-out;
+    opacity: 0.7;
+    transition: 0.4s;
 }
 
 .button:hover {
     background: linear-gradient(36deg, blue, green);
+    opacity: 1;
     /* animation: hoverBtn 18s 0.3s linear infinite; */
 }
 
