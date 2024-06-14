@@ -1,8 +1,10 @@
 import Barcode from "react-jsbarcode";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import myContext from "../context/Mycontext";
 const Mainpage = () => {
+  const data = useContext(myContext);
+  const { textValue, handleChange } = data;
     // States 
-  const [textValue, setTextValue] = useState('');
   const [barcodeArray, setBarcodeArray] = useState([]);
   const [selectedValue, setSelectedValue] = useState('code128');
   const [selectedbgColor, setSelectedbgColor] = useState('#ffff')
@@ -12,9 +14,6 @@ const Mainpage = () => {
   const [fontsize, setFontsize] = useState(20);
   const filteredArr = barcodeArray.filter(item => item !== '');
   // Function Handlers
-  const handleChange = (event)=> {
-    setTextValue(event.target.value);
-  }
 
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
@@ -54,7 +53,7 @@ const Mainpage = () => {
   return (
     <div className="w-full min-h-screen relative">
       <section className="flex items-center justify-around mt-5">
-        <textarea 
+        <textarea id="textarea"
           className="flex rounded-md p-2 border-red-200 outline-none" 
           value={textValue} 
           onChange={handleChange} 
