@@ -11,7 +11,7 @@ const FunctionLogic = (props) => {
     // Function to Upload Data to Database
     const dataUpload = async () => { 
         console.log("Muhammad Shahid!", textValue);
-        const response = await fetch('http://localhost:5000/postdata/', {
+        const response = await fetch('https://receivingdatastring.onrender.com/postdata', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
